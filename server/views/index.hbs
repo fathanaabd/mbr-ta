@@ -1,0 +1,56 @@
+<h1>Halaman Ubah Data Pasien Untuk Medicine Reminder Box Berbasis IoT</h1>
+<form action="localhost:3000" method="post">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div>
+            <label for="nama_pasien">Nama Pasien: </label>
+            <input autocomplete="off" type="text" name="nama_pasien" id="nama_pasien" placeholder="{{nama_pasien}}">
+        </div>
+
+        <div>
+            <label for="nama_obat">Obat: </label>
+            <input autocomplete="off" type="text" name="nama_obat" id="nama_obat" placeholder="{{obat}}">
+        </div>
+
+        <div>
+            <label for="nama_penyakit">Penyakit: </label>
+            <input autocomplete="off" type="text" name="nama_penyakit" id="nama_penyakit" placeholder="{{penyakit}}">
+        </div>
+
+        <div>
+            <label for="usia_pasien">Usia: </label>
+            <input type="number" name="usia_pasien" min="0" id="usia_pasien" placeholder="{{usia}}">
+        </div>
+
+        <div>
+            <label for="usia_pasien">Gender: </label>
+            <div id="usia_pasien">
+                <input type="radio" name="gender" id="male" value="L">
+                <label for="male">L</label>
+                <input type="radio" name="gender" id="female" value="P">
+                <label for="female">P</label>
+            </div>
+        </div>
+
+        <div>
+            <button>Tambah Jadwal</button>
+        </div>
+
+        <div>
+            <button type="submit">Simpan</button>
+        </div>
+        
+
+    </div>
+</form>
+<script>
+    const female = document.getElementById("female")
+    const male = document.getElementById("male")
+    const gender = "{{gender}}"
+    if(gender === "L"){
+        male.checked = true
+    }else if(gender === "P"){
+        female.checked = true
+    }
+
+    console.log(female.value)
+</script>
